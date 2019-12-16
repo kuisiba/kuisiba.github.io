@@ -1,13 +1,13 @@
 #! /bin/sh
 
-FILE_NAME="`date '+%Y-%m-%d'-${1}.md`"
+NOW=`date '+%Y-%m-%d-%H-%M'`
+FILE_NAME="${NOW}-${1}.md"
 
-touch _posts/$FILE_NAME
+#touch _posts/{$FILE_NAME}
 
 echo \
 "---
 layout: post
 title: $2
-date: `date '+%Y-%m-%d'`
----
-"> _posts/$FILE_NAME
+date: ${NOW}
+---" > _posts/${FILE_NAME}
